@@ -9,6 +9,7 @@ function ListOfAnnouncements(props) {
 			return <SelectedAnnouncement key={announcement.id}
 			                             announcement={announcement}
 			                             closeDetails={props.closeDetails}
+			                             deleteAnnouncement={props.deleteAnnouncement}
 			/>
 		} else {
 			return <Announcement key={announcement.id}

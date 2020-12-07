@@ -43,6 +43,7 @@ class App extends Component {
 		this.addNewAnnouncement = this.addNewAnnouncement.bind(this);
 		this.selectAnnouncement = this.selectAnnouncement.bind(this);
 		this.closeDetails = this.closeDetails.bind(this);
+		this.deleteAnnouncement = this.deleteAnnouncement.bind(this);
 	}
 
 
@@ -86,9 +87,14 @@ class App extends Component {
 	//Close details
 	closeDetails() {
 		this.setState({
-			announcement: this.state.announcements.map((announcement) => {
-				announcement.selected = false;
-			})
+			announcement: this.state.announcements.map((announcement) => announcement.selected = false)
+		})
+	}
+
+	//Delete announcement
+	deleteAnnouncement(id) {
+		this.setState({
+			announcements: this.state.announcements.filter((announcement) => announcement.id !== id)
 		})
 	}
 
@@ -103,6 +109,7 @@ class App extends Component {
 				<ListOfAnnouncements announcements={this.state.announcements}
 				                     selectAnnouncement={this.selectAnnouncement}
 				                     closeDetails={this.closeDetails}
+				                     deleteAnnouncement={this.deleteAnnouncement}
 				/>
 			</div>
 		)
