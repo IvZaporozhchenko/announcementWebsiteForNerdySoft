@@ -1,7 +1,7 @@
 function AddAnnouncementBtn(props) {
 	return (
 		<div>
-			<button onClick={props.onClick}>Add Announcement</button>
+			<button onClick={props.showAddAnnouncementFields}>Add Announcement</button>
 		</div>
 	)
 }

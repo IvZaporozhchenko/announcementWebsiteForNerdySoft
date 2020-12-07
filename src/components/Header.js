@@ -6,7 +6,7 @@ class Header extends Component{
 		return (
 			<div>
 				<h1>Announcement Website</h1>
-				<AddAnnouncementBtn onClick={this.props.onClick} />
+				<AddAnnouncementBtn showAddAnnouncementFields={this.props.showAddAnnouncementFields} />
 			</div>
 		)
 	}

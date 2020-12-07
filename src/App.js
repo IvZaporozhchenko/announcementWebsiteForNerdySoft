@@ -13,18 +13,45 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			announcements: [],
-			newAnnouncementVisibility: false
+			announcements: [
+				{
+					id: 1,
+					title: 1,
+					description: 1,
+					date: 1,
+					selected: false
+				},
+				{
+					id: 2,
+					title: 2,
+					description: 2,
+					date: 2,
+					selected: true
+				},
+				{
+					id: 3,
+					title: 3,
+					description: 3,
+					date: 3,
+					selected: false
+				}
+			],
+			newAnnouncementVisibility: true
 		}
 
-		this.onClick = this.onClick.bind(this);
+		this.showAddAnnouncementFields = this.showAddAnnouncementFields.bind(this);
 		this.addNewAnnouncement = this.addNewAnnouncement.bind(this);
+		this.selectAnnouncement = this.selectAnnouncement.bind(this);
 	}
 
-	onClick(e) {
-		this.setState({
-			newAnnouncementVisibility: !this.state.newAnnouncementVisibility
-		})
+
+	//Show "Add new announcements fields"
+	showAddAnnouncementFields(e) {
+		if(this.state.newAnnouncementVisibility) {
+			this.setState({
+				newAnnouncementVisibility: !this.state.newAnnouncementVisibility
+			})
+		}
 	}
 
 	//Add new announcement
@@ -42,15 +69,31 @@ class App extends Component {
 		})
 	}
 
+	//Select announcement
+	selectAnnouncement(id) {
+		console.log(id);
+		this.setState({
+			announcement: this.state.announcements.map((announcenemt) => {
+				announcenemt.selected = false;
+				if(announcenemt.id === id) {
+					announcenemt.selected = !announcenemt.selected;
+				}
+				return announcenemt;
+			})
+		})
+	}
+
 	render() {
 		return (
 			<div>
-				<Header onClick={this.onClick} />
+				<Header showAddAnnouncementFields={this.showAddAnnouncementFields} />
 				<AddNewAnnouncement visibility={this.state.newAnnouncementVisibility}
 				                    addNewAnnouncement={this.addNewAnnouncement}
 				/>
 				<SearchAnnouncement onChange={this.onChange} />
-				<ListOfAnnouncements announcements={this.state.announcements} />
+				<ListOfAnnouncements announcements={this.state.announcements}
+				                     selectAnnouncement={this.selectAnnouncement}
+				/>
 			</div>
 		)
 	}

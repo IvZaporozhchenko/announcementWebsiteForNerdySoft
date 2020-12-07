@@ -1,6 +1,6 @@
 function Announcement(props) {
 	return (
-		<div>
+		<div onClick={props.selectAnnouncement.bind(this, props.announcement.id)}>
 			{props.announcement.title}
 		</div>
 	)
