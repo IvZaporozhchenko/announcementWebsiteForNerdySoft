@@ -36,7 +36,8 @@ class App extends Component {
 					selected: false
 				}
 			],
-			newAnnouncementVisibility: true
+			newAnnouncementVisibility: true,
+			searchedAnnouncementTitle: ""
 		}
 
 		this.showAddAnnouncementFields = this.showAddAnnouncementFields.bind(this);
@@ -44,8 +45,16 @@ class App extends Component {
 		this.selectAnnouncement = this.selectAnnouncement.bind(this);
 		this.closeDetails = this.closeDetails.bind(this);
 		this.deleteAnnouncement = this.deleteAnnouncement.bind(this);
+		this.searchedAnnouncement = this.searchedAnnouncement.bind(this);
 	}
 
+
+	//Search announcement by title
+	searchedAnnouncement(title) {
+		this.setState({
+			searchedAnnouncementTitle: title
+		})
+	}
 
 	//Show "Add new announcements fields"
 	showAddAnnouncementFields(e) {
@@ -103,14 +112,13 @@ class App extends Component {
 			<div>
 				<Header showAddAnnouncementFields={this.showAddAnnouncementFields} />
 				<AddNewAnnouncement visibility={this.state.newAnnouncementVisibility}
-				                    addNewAnnouncement={this.addNewAnnouncement}
-				/>
-				<SearchAnnouncement onChange={this.onChange} />
+				                    addNewAnnouncement={this.addNewAnnouncement}/>
+				<SearchAnnouncement searchedAnnouncement={this.searchedAnnouncement} />
 				<ListOfAnnouncements announcements={this.state.announcements}
+				                     searchedAnnouncementTitle={this.state.searchedAnnouncementTitle}
 				                     selectAnnouncement={this.selectAnnouncement}
 				                     closeDetails={this.closeDetails}
-				                     deleteAnnouncement={this.deleteAnnouncement}
-				/>
+				                     deleteAnnouncement={this.deleteAnnouncement}/>
 			</div>
 		)
 	}
