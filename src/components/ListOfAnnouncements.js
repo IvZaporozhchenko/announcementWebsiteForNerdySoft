@@ -7,7 +7,9 @@ function ListOfAnnouncements(props) {
 	).map((announcement) => {
 		if(announcement.selected) {
 			return <SelectedAnnouncement key={announcement.id}
-			                             announcement={announcement}/>
+			                             announcement={announcement}
+			                             closeDetails={props.closeDetails}
+			/>
 		} else {
 			return <Announcement key={announcement.id}
 			                     announcement={announcement}

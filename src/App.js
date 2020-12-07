@@ -26,7 +26,7 @@ class App extends Component {
 					title: 2,
 					description: 2,
 					date: 2,
-					selected: true
+					selected: false
 				},
 				{
 					id: 3,
@@ -42,6 +42,7 @@ class App extends Component {
 		this.showAddAnnouncementFields = this.showAddAnnouncementFields.bind(this);
 		this.addNewAnnouncement = this.addNewAnnouncement.bind(this);
 		this.selectAnnouncement = this.selectAnnouncement.bind(this);
+		this.closeDetails = this.closeDetails.bind(this);
 	}
 
 
@@ -71,7 +72,6 @@ class App extends Component {
 
 	//Select announcement
 	selectAnnouncement(id) {
-		console.log(id);
 		this.setState({
 			announcement: this.state.announcements.map((announcenemt) => {
 				announcenemt.selected = false;
@@ -79,6 +79,15 @@ class App extends Component {
 					announcenemt.selected = !announcenemt.selected;
 				}
 				return announcenemt;
+			})
+		})
+	}
+
+	//Close details
+	closeDetails() {
+		this.setState({
+			announcement: this.state.announcements.map((announcement) => {
+				announcement.selected = false;
 			})
 		})
 	}
@@ -93,6 +102,7 @@ class App extends Component {
 				<SearchAnnouncement onChange={this.onChange} />
 				<ListOfAnnouncements announcements={this.state.announcements}
 				                     selectAnnouncement={this.selectAnnouncement}
+				                     closeDetails={this.closeDetails}
 				/>
 			</div>
 		)
