@@ -46,6 +46,7 @@ class App extends Component {
 		this.closeDetails = this.closeDetails.bind(this);
 		this.deleteAnnouncement = this.deleteAnnouncement.bind(this);
 		this.searchedAnnouncement = this.searchedAnnouncement.bind(this);
+		this.cancelAdding = this.cancelAdding.bind(this);
 	}
 
 
@@ -56,13 +57,20 @@ class App extends Component {
 		})
 	}
 
-	//Show "Add new announcements fields"
+	//Show "Add new announcement fields"
 	showAddAnnouncementFields(e) {
 		if(this.state.newAnnouncementVisibility) {
 			this.setState({
 				newAnnouncementVisibility: !this.state.newAnnouncementVisibility
 			})
 		}
+	}
+
+	//Hide "Add new announcement fields"
+	cancelAdding() {
+		this.setState({
+			newAnnouncementVisibility: true
+		})
 	}
 
 	//Add new announcement
@@ -76,7 +84,8 @@ class App extends Component {
 			};
 
 		this.setState({
-			announcements: [...this.state.announcements, newAnnouncement]
+			announcements: [...this.state.announcements, newAnnouncement],
+			newAnnouncementVisibility: true
 		})
 	}
 
@@ -112,7 +121,9 @@ class App extends Component {
 			<div>
 				<Header showAddAnnouncementFields={this.showAddAnnouncementFields} />
 				<AddNewAnnouncement visibility={this.state.newAnnouncementVisibility}
-				                    addNewAnnouncement={this.addNewAnnouncement}/>
+				                    addNewAnnouncement={this.addNewAnnouncement}
+				                    cancelAdding={this.cancelAdding}
+				/>
 				<SearchAnnouncement searchedAnnouncement={this.searchedAnnouncement} />
 				<ListOfAnnouncements announcements={this.state.announcements}
 				                     searchedAnnouncementTitle={this.state.searchedAnnouncementTitle}

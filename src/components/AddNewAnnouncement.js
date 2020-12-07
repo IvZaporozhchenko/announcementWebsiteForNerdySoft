@@ -53,9 +53,9 @@ class AddNewAnnouncement extends Component {
 					       value={this.state.description}
 					       onChange={this.onChange}/>
 					<br/>
-					<input type="submit"/>
-					<button>Cancel</button>
+					<input type="submit" value="Add new announcement"/>
 				</form>
+				<button onClick={this.props.cancelAdding}>Cancel</button>
 			</div>
 		)
 	}
