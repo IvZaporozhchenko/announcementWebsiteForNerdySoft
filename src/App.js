@@ -36,17 +36,16 @@ class App extends Component {
 					selected: false
 				}
 			],
-			newAnnouncementVisibility: true,
+			newAnnouncementFieldsIsHidden: true,
 			searchedAnnouncementTitle: ""
 		}
 
-		this.showAddAnnouncementFields = this.showAddAnnouncementFields.bind(this);
+		this.toggleAddAnnouncementFields = this.toggleAddAnnouncementFields.bind(this);
 		this.addNewAnnouncement = this.addNewAnnouncement.bind(this);
 		this.selectAnnouncement = this.selectAnnouncement.bind(this);
-		this.closeDetails = this.closeDetails.bind(this);
 		this.deleteAnnouncement = this.deleteAnnouncement.bind(this);
 		this.searchedAnnouncement = this.searchedAnnouncement.bind(this);
-		this.cancelAdding = this.cancelAdding.bind(this);
+		this.editAnnouncement = this.editAnnouncement.bind(this);
 	}
 
 
@@ -57,21 +56,20 @@ class App extends Component {
 		})
 	}
 
-	//Show "Add new announcement fields"
-	showAddAnnouncementFields(e) {
-		if(this.state.newAnnouncementVisibility) {
+	//Toggle "Add new announcement fields"
+	toggleAddAnnouncementFields(e) {
+		if(e.target.name === "showAddNewAnnouncementFields") {
 			this.setState({
-				newAnnouncementVisibility: !this.state.newAnnouncementVisibility
+				newAnnouncementFieldsIsHidden: false
+			})
+		} else if(e.target.name === "hideAddNewAnnouncementFields") {
+			this.setState({
+				newAnnouncementFieldsIsHidden: true
 			})
 		}
+
 	}
 
-	//Hide "Add new announcement fields"
-	cancelAdding() {
-		this.setState({
-			newAnnouncementVisibility: true
-		})
-	}
 
 	//Add new announcement
 	addNewAnnouncement(announcement) {
@@ -85,19 +83,19 @@ class App extends Component {
 
 		this.setState({
 			announcements: [...this.state.announcements, newAnnouncement],
-			newAnnouncementVisibility: true
+			newAnnouncementFieldsIsHidden: true
 		})
 	}
 
 	//Select announcement
 	selectAnnouncement(id) {
 		this.setState({
-			announcement: this.state.announcements.map((announcenemt) => {
-				announcenemt.selected = false;
-				if(announcenemt.id === id) {
-					announcenemt.selected = !announcenemt.selected;
+			announcement: this.state.announcements.map((announcement) => {
+				announcement.selected = false;
+				if(announcement.id === id) {
+					announcement.selected = !announcement.selected;
 				}
-				return announcenemt;
+				return announcement;
 			})
 		})
 	}
@@ -116,20 +114,36 @@ class App extends Component {
 		})
 	}
 
+	//Edit announcement
+	editAnnouncement(editedAnnouncement) {
+		console.log(editedAnnouncement);
+		this.setState({
+			announcement: this.state.announcements.map((announcement) => {
+				if(announcement.id === editedAnnouncement.id) {
+					announcement.title = editedAnnouncement.title;
+					announcement.description = editedAnnouncement.description;
+				}
+				return announcement;
+			})
+		})
+	}
+
 	render() {
 		return (
 			<div>
-				<Header showAddAnnouncementFields={this.showAddAnnouncementFields} />
-				<AddNewAnnouncement visibility={this.state.newAnnouncementVisibility}
+				<Header toggleAddAnnouncementFields={this.toggleAddAnnouncementFields} />
+				<AddNewAnnouncement visibility={this.state.newAnnouncementFieldsIsHidden}
 				                    addNewAnnouncement={this.addNewAnnouncement}
-				                    cancelAdding={this.cancelAdding}
+				                    toggleAddAnnouncementFields={this.toggleAddAnnouncementFields}
 				/>
 				<SearchAnnouncement searchedAnnouncement={this.searchedAnnouncement} />
 				<ListOfAnnouncements announcements={this.state.announcements}
 				                     searchedAnnouncementTitle={this.state.searchedAnnouncementTitle}
 				                     selectAnnouncement={this.selectAnnouncement}
 				                     closeDetails={this.closeDetails}
-				                     deleteAnnouncement={this.deleteAnnouncement}/>
+				                     deleteAnnouncement={this.deleteAnnouncement}
+				                     editAnnouncement={this.editAnnouncement}
+				/>
 			</div>
 		)
 	}

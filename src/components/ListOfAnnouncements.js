@@ -1,5 +1,6 @@
 import Announcement from "./Announcement";
 import SelectedAnnouncement from "./SelectedAnnouncement";
+import EditAnnouncement from "./EditAnnouncement";
 
 function ListOfAnnouncements(props) {
 	return props.announcements.sort(
@@ -7,18 +8,21 @@ function ListOfAnnouncements(props) {
 	).filter(
 		(announcement) => {
 			if (props.searchedAnnouncementTitle) {
-				return announcement.title.toString().toLowerCase().includes(props.searchedAnnouncementTitle.toLowerCase());
+				return announcement.title.toString().toLowerCase().includes(props.searchedAnnouncementTitle.toLowerCase()) || announcement.selected;
 			} else {
 				return announcement;
 			}
 		}
 	).map((announcement) => {
 		if (announcement.selected) {
-			return <SelectedAnnouncement key={announcement.id}
-			                             announcement={announcement}
-			                             closeDetails={props.closeDetails}
-			                             deleteAnnouncement={props.deleteAnnouncement}
-			/>
+			return <div key={announcement.id}>
+				<SelectedAnnouncement announcement={announcement}
+				                      closeDetails={props.closeDetails}
+				                      deleteAnnouncement={props.deleteAnnouncement}/>
+				<EditAnnouncement announcement={announcement}
+				                  editAnnouncement={props.editAnnouncement}
+				/>
+			</div>
 		} else {
 			return <Announcement key={announcement.id}
 			                     announcement={announcement}

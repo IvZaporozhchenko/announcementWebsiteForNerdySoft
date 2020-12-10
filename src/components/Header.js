@@ -6,7 +6,7 @@ class Header extends Component{
 		return (
 			<div>
 				<h1>Announcement Website</h1>
-				<AddAnnouncementBtn showAddAnnouncementFields={this.props.showAddAnnouncementFields} />
+				<AddAnnouncementBtn toggleAddAnnouncementFields={this.props.toggleAddAnnouncementFields} />
 			</div>
 		)
 	}

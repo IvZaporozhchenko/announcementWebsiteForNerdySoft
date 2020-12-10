@@ -55,7 +55,7 @@ class AddNewAnnouncement extends Component {
 					<br/>
 					<input type="submit" value="Add new announcement"/>
 				</form>
-				<button onClick={this.props.cancelAdding}>Cancel</button>
+				<button name="hideAddNewAnnouncementFields" onClick={this.props.toggleAddAnnouncementFields}>Cancel</button>
 			</div>
 		)
 	}
