@@ -13,29 +13,7 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			announcements: [
-				{
-					id: 1,
-					title: 1,
-					description: 1,
-					date: new Date(),
-					selected: true
-				},
-				{
-					id: 2,
-					title: 2,
-					description: 2,
-					date: new Date(),
-					selected: false
-				},
-				{
-					id: 3,
-					title: 3,
-					description: 3,
-					date: new Date(),
-					selected: false
-				}
-			],
+			announcements: [],
 			newAnnouncementFieldsDisplay: "none",
 			searchedAnnouncementTitle: ""
 		}
@@ -47,6 +25,18 @@ class App extends Component {
 		this.deleteAnnouncement = this.deleteAnnouncement.bind(this);
 		this.searchAnnouncement = this.searchAnnouncement.bind(this);
 		this.editAnnouncement = this.editAnnouncement.bind(this);
+	}
+
+	componentDidMount() {
+		let announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+		announcements.forEach((announcement) => announcement.date = new Date(announcement.date));
+		this.setState({
+			announcements: announcements
+		})
+	}
+
+	componentDidUpdate() {
+		localStorage.setItem('announcements', JSON.stringify(this.state.announcements));
 	}
 
 
