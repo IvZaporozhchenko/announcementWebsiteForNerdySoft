@@ -131,3 +131,27 @@
 .searchField input:focus {
     width: 50%;
 }
+
+/*Selected announcement*/
+.selectedAnnouncement {
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.selectedAnnouncementInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.selectedAnnouncementInfo .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.selectedAnnouncementInfo .buttons:last-child {
+    text-align: end;
+}

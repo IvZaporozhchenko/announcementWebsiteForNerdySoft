@@ -31,33 +31,37 @@ class EditAnnouncementFields extends Component {
 
 	onSubmit(e) {
 		e.preventDefault();
-		if(this.state.title && this.state.description) {
-			this.props.editAnnouncement(this.state);
-			this.setState({
-				title: this.props.announcement.title,
-				description: this.props.announcement.description
-			})
-		}
+		this.props.editAnnouncement(this.state);
+		this.setState({
+			title: this.props.announcement.title,
+			description: this.props.announcement.description
+		})
 	}
 
 	render() {
 		return (
-			<div>
+			<div hidden>
 				<form onSubmit={this.onSubmit}>
 					<input name="title"
 					       type="text"
+					       required={true}
 					       value={this.state.title}
 					       onChange={this.onChange}
 					/>
 					<input name="description"
 					       type="text"
+					       required={true}
 					       value={this.state.description}
 					       onChange={this.onChange}
 					/>
 					<br />
-					<input type="submit"/>
+					<input type="submit"
+					       value="Edit announcement"
+					/>
+					<input type="reset"
+					       value="Cancel"
+					/>
 				</form>
-				<button>Cancel</button>
 			</div>
 		)
 	}

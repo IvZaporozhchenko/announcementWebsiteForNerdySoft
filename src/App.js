@@ -18,21 +18,21 @@ class App extends Component {
 					id: 1,
 					title: 1,
 					description: 1,
-					date: 1,
-					selected: false
+					date: new Date(),
+					selected: true
 				},
 				{
 					id: 2,
 					title: 2,
 					description: 2,
-					date: 2,
+					date: new Date(),
 					selected: false
 				},
 				{
 					id: 3,
 					title: 3,
 					description: 3,
-					date: 3,
+					date: new Date(),
 					selected: false
 				}
 			],

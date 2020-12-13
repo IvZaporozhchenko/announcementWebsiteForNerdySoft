@@ -54,7 +54,7 @@ class AddNewAnnouncementFields extends Component {
 						<input id="title"
 						       name="title"
 						       type="text"
-						       required="true"
+						       required={true}
 						       placeholder="title"
 						       value={this.state.title}
 						       onChange={this.onChange}/>
@@ -63,7 +63,7 @@ class AddNewAnnouncementFields extends Component {
 						<br/>
 						<textarea id="description"
 						          name="description"
-						          required="true"
+						          required={true}
 						          placeholder="description"
 						          value={this.state.description}
 						          onChange={this.onChange}>

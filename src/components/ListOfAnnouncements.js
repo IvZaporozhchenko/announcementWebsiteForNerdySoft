@@ -14,22 +14,22 @@ function ListOfAnnouncements(props) {
 			}
 		}
 	).map((announcement) => {
-		if (announcement.selected) {
-			return <div key={announcement.id}>
-				<SelectedAnnouncement announcements={props.announcements}
-				                      announcement={announcement}
-				                      closeDetails={props.closeDetails}
-				                      deleteAnnouncement={props.deleteAnnouncement}/>
-				<EditAnnouncementFields announcement={announcement}
-				                        editAnnouncement={props.editAnnouncement}
-				/>
-			</div>
-		} else {
-			return <Announcement key={announcement.id}
-			                     announcement={announcement}
-			                     selectAnnouncement={props.selectAnnouncement}/>
+			if (announcement.selected) {
+				return <div key={announcement.id}>
+					<SelectedAnnouncement announcements={props.announcements}
+					                      announcement={announcement}
+					                      closeDetails={props.closeDetails}
+					                      deleteAnnouncement={props.deleteAnnouncement}/>
+					<EditAnnouncementFields announcement={announcement}
+					                        editAnnouncement={props.editAnnouncement}/>
+				</div>
+			} else {
+				return <Announcement key={announcement.id}
+				                     announcement={announcement}
+				                     selectAnnouncement={props.selectAnnouncement}/>
+			}
 		}
-	})
+	)
 }
 
 export default ListOfAnnouncements;
