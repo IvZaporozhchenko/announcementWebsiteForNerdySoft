@@ -1,6 +1,6 @@
 import Announcement from "./Announcement";
 import SelectedAnnouncement from "./SelectedAnnouncement";
-import EditAnnouncement from "./EditAnnouncement";
+import EditAnnouncementFields from "./EditAnnouncementFields";
 
 function ListOfAnnouncements(props) {
 	return props.announcements.sort(
@@ -16,11 +16,12 @@ function ListOfAnnouncements(props) {
 	).map((announcement) => {
 		if (announcement.selected) {
 			return <div key={announcement.id}>
-				<SelectedAnnouncement announcement={announcement}
+				<SelectedAnnouncement announcements={props.announcements}
+				                      announcement={announcement}
 				                      closeDetails={props.closeDetails}
 				                      deleteAnnouncement={props.deleteAnnouncement}/>
-				<EditAnnouncement announcement={announcement}
-				                  editAnnouncement={props.editAnnouncement}
+				<EditAnnouncementFields announcement={announcement}
+				                        editAnnouncement={props.editAnnouncement}
 				/>
 			</div>
 		} else {

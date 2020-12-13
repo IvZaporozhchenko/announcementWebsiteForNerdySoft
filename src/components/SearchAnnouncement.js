@@ -8,14 +8,14 @@ class SearchAnnouncement extends Component{
 	}
 
 	onChange(e) {
-		this.props.searchedAnnouncement(e.target.value);
+		this.props.searchAnnouncement(e.target.value);
 	}
 
 	render() {
 		return (
-			<div>
-				<input type="text"
-				       placeholder="Search"
+			<div className="searchField">
+				<input type="search"
+				       placeholder="Search..."
 				       onChange={this.onChange}
 				/>
 			</div>

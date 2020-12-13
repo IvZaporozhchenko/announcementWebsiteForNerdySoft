@@ -2,3 +2,132 @@
     margin: 0;
     padding: 0;
 }
+
+.wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/*Header*/
+
+.header {
+    min-height: 50px;
+    background-color: rgb(54, 38, 59);
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+.header h1 {
+    flex-grow: 0.5;
+    color: white;
+    text-align: center;
+}
+
+.header div {
+    flex-grow: 2.5;
+    text-align: end;
+    margin-right: 15px;
+}
+
+.header div button {
+    background-color: rgb(121, 190, 0);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    transition-duration: 0.4s;
+}
+
+.header div button:hover {
+    background-color: rgb(139, 216, 5);
+}
+
+/*Add new announcement fields*/
+
+.addNewAnnouncementFields {
+    flex-direction: column;
+    margin: 0 auto;
+    border: 2px solid rgb(54, 38, 59);
+}
+
+
+
+.addNewAnnouncementFields h2 {
+    text-align: center;
+}
+
+.addNewAnnouncementFields .inputFields {
+    background-color: rgb(240, 242, 250);
+    padding: 15px 15%;
+    font-size: 20px;
+}
+
+.addNewAnnouncementFields .inputFields input {
+    font-size: 16px;
+    border: 2px solid rgb(54, 38, 59);
+    border-radius: 4px;
+    padding: 10px 10px;
+    width: 40%;
+}
+
+.addNewAnnouncementFields .inputFields textarea {
+    font-size: 16px;
+    border: 2px solid rgb(54, 38, 59);
+    border-radius: 4px;
+    padding: 10px 10px;
+    width: 40%;
+    height: 150px;
+    resize: none;
+}
+
+.addNewAnnouncementFields .buttons {
+    display: flex;
+    padding: 15px 15%;
+    justify-content: space-evenly;
+}
+
+.addNewAnnouncementFields .buttons input {
+    background-color: rgb(121, 190, 0);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.addNewAnnouncementFields .buttons input[type="reset"] {
+    background-color: red;
+}
+
+
+/*Search field*/
+
+.searchField {
+    display: flex;
+    justify-content:center;
+    min-height: 50px;
+    padding: 10px 0;
+    border: 2px solid rgb(54, 38, 59);
+}
+
+.searchField input {
+    font-size: 16px;
+    border: 2px solid rgb(54, 38, 59);
+    border-radius: 4px;
+    padding: 10px 10px;
+    width: 15%;
+    transition: width 0.4s ease-in-out;
+}
+
+.searchField input:focus {
+    width: 50%;
+}

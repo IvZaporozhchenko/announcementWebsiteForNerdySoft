@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class EditAnnouncement extends Component {
+class EditAnnouncementFields extends Component {
 	constructor(props) {
 		super(props);
 
@@ -34,8 +34,8 @@ class EditAnnouncement extends Component {
 		if(this.state.title && this.state.description) {
 			this.props.editAnnouncement(this.state);
 			this.setState({
-				title: "",
-				description: ""
+				title: this.props.announcement.title,
+				description: this.props.announcement.description
 			})
 		}
 	}
@@ -54,6 +54,7 @@ class EditAnnouncement extends Component {
 					       value={this.state.description}
 					       onChange={this.onChange}
 					/>
+					<br />
 					<input type="submit"/>
 				</form>
 				<button>Cancel</button>
@@ -62,4 +63,4 @@ class EditAnnouncement extends Component {
 	}
 }
 
-export default EditAnnouncement;
+export default EditAnnouncementFields;

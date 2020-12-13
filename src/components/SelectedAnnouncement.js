@@ -1,5 +1,6 @@
 import DeleteAnnouncementBtn from "./DeleteAnnouncementBtn";
 import EditAnnouncementBtn from "./EditAnnouncementBtn";
+import TopSimilarAnnouncements from "./TopSimilarAnnouncements";
 
 function SelectedAnnouncement(props) {
 	return (
@@ -9,7 +10,9 @@ function SelectedAnnouncement(props) {
 			<p>Description: {props.announcement.description}</p>
 			<EditAnnouncementBtn />
 			<DeleteAnnouncementBtn id={props.announcement.id}
-			                       deleteAnnouncement={props.deleteAnnouncement} />
+			                       deleteAnnouncement={props.deleteAnnouncement}
+			/>
+			<TopSimilarAnnouncements />
 		</div>
 	)
 }
