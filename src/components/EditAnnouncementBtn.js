@@ -1,6 +1,6 @@
 function EditAnnouncementBtn(props) {
 	return (
-		<button>Edit</button>
+		<button onClick={props.toggleEditingFields}>Edit</button>
 	)
 }
 

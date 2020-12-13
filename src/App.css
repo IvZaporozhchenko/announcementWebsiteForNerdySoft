@@ -153,5 +153,12 @@
 }
 
 .selectedAnnouncementInfo .buttons:last-child {
-    text-align: end;
+    justify-content: space-between;
+}
+
+/*Edit announcement fields*/
+
+.editAnnouncementFields {
+    display: flex;
+    flex-direction: column;
 }
