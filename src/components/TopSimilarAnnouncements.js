@@ -1,8 +1,8 @@
 function TopSimilarAnnouncements (props) {
 	let topSimilarAnnouncements = props.announcements.filter((announcement) => {
 		return announcement.id !== props.announcement.id &&
-			props.announcement.title.toString().split(" ").some((a) => {return announcement.title.toString().includes(a)}) &&
-			props.announcement.description.toString().split(" ").some((a) => {return announcement.description.toString().includes(a)});
+			props.announcement.title.toString().toLowerCase().split(" ").some((a) => {return announcement.title.toString().toLowerCase().includes(a)}) &&
+			props.announcement.description.toString().toLowerCase().split(" ").some((a) => {return announcement.description.toLowerCase().toString().includes(a)});
 	})
 
 	if (topSimilarAnnouncements.length !== 0) {

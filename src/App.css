@@ -150,7 +150,51 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
+
+.selectedAnnouncementWrapper .selectedAnnouncementInfo :first-child {
+    max-width: 85%;
+}
+
+.selectedAnnouncementWrapper .selectedAnnouncementInfo div > p > span {
+    font-size: 30px;
+}
+
+.selectedAnnouncementWrapper .selectedAnnouncementInfo .dateDisplay {
+    margin-top: 15px;
+}
+
+
+.selectedAnnouncementWrapper .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.selectedAnnouncementWrapper .buttons .closeDetails {
+    background-color: rgb(209 255 212);
+    border: none;
+}
+
+.selectedAnnouncementWrapper .buttons .editDeleteBtns > button {
+    background-color: orange;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    margin-left: 10px;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.selectedAnnouncementWrapper .buttons .editDeleteBtns :last-child {
+    background-color: red;
+}
+
 
 
 /*Edit announcement fields*/
@@ -158,6 +202,23 @@ p {
 .editAnnouncementFields {
     display: flex;
     flex-direction: column;
+}
+
+.editAnnouncementFields input {
+    font-size: 16px;
+    border: 2px solid rgb(54 38 59);
+    border-radius: 4px;
+    padding: 10px 10px;
+}
+
+.editAnnouncementFields textarea {
+    font-size: 16px;
+    border: 2px solid rgb(54 38 59);
+    border-radius: 4px;
+    padding: 10px 10px;
+    width: 600px;
+    height: 100px;
+    resize: none;
 }
 
 /*Announcement*/

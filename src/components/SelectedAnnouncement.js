@@ -30,7 +30,7 @@ class SelectedAnnouncement extends Component {
 				<div className="selectedAnnouncementInfo">
 					<div>
 						<div style={{display: this.state.displayAnnouncementInfo}}>
-							<p>{this.props.announcement.title}</p>
+							<p><span>{this.props.announcement.title}</span></p>
 							<p>{this.props.announcement.description}</p>
 						</div>
 						<EditAnnouncementFields editAnnouncement={this.props.editAnnouncement}
@@ -39,9 +39,9 @@ class SelectedAnnouncement extends Component {
 						                        displayEditAnnouncementFields={this.state.displayEditAnnouncementFields}/>
 						<DateDisplay date={this.props.announcement.date} />
 					</div>
-					<div>
-						<button onClick={this.props.closeDetails}>Close details</button>
-						<div style={{display: this.state.displayAnnouncementInfo}}>
+					<div className="buttons">
+						<button className="closeDetails" onClick={this.props.closeDetails}>X</button>
+						<div className="editDeleteBtns" style={{display: this.state.displayAnnouncementInfo}}>
 							<EditAnnouncementBtn toggleEditingFields={this.toggleEditingFields}/>
 							<DeleteAnnouncementBtn id={this.props.announcement.id}
 							                       deleteAnnouncement={this.props.deleteAnnouncement}/>
