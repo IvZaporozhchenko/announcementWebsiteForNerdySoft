@@ -6,6 +6,7 @@ function DateDisplay(props) {
 		mm = date.getMonth(),
 		yy = date.getFullYear();
 
+	hours  = (hours < 10 ? "0" + hours : hours);
 	minutes  = (minutes < 10 ? "0" + minutes : minutes);
 	switch (mm) {
 		case 0:
@@ -48,7 +49,7 @@ function DateDisplay(props) {
 			mm = "error";
 	}
 
-	return <p>date:{hours}:{minutes} {dd}-{mm}-{yy}</p>
+	return <p className="dateDisplay">{hours}:{minutes} {dd}-{mm}-{yy}</p>
 }
 
 export default DateDisplay;

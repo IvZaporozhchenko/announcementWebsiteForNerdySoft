@@ -19,7 +19,8 @@ function ListOfAnnouncements(props) {
 					                      announcement={announcement}
 					                      closeDetails={props.closeDetails}
 					                      deleteAnnouncement={props.deleteAnnouncement}
-					                      editAnnouncement={props.editAnnouncement}/>
+					                      editAnnouncement={props.editAnnouncement}
+					                      selectAnnouncement={props.selectAnnouncement}/>
 				</div>
 			} else {
 				return <Announcement key={announcement.id}

@@ -1,6 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: cursive;
+}
+
+p {
+    word-break: break-all;
 }
 
 .wrapper {
@@ -12,7 +17,7 @@
 
 .header {
     min-height: 50px;
-    background-color: rgb(54, 38, 59);
+    background-color: rgb(54 38 59);
     display:flex;
     flex-wrap:wrap;
     align-items:center;
@@ -31,7 +36,7 @@
 }
 
 .header div button {
-    background-color: rgb(121, 190, 0);
+    background-color: rgb(121 190 0);
     border: none;
     border-radius: 8px;
     color: white;
@@ -45,7 +50,7 @@
 }
 
 .header div button:hover {
-    background-color: rgb(139, 216, 5);
+    background-color: rgb(139 216 5);
 }
 
 /*Add new announcement fields*/
@@ -53,7 +58,7 @@
 .addNewAnnouncementFields {
     flex-direction: column;
     margin: 0 auto;
-    border: 2px solid rgb(54, 38, 59);
+    border: 2px solid rgb(54 38 59);
 }
 
 
@@ -63,14 +68,14 @@
 }
 
 .addNewAnnouncementFields .inputFields {
-    background-color: rgb(240, 242, 250);
+    background-color: rgb(240 242 250);
     padding: 15px 15%;
     font-size: 20px;
 }
 
 .addNewAnnouncementFields .inputFields input {
     font-size: 16px;
-    border: 2px solid rgb(54, 38, 59);
+    border: 2px solid rgb(54 38 59);
     border-radius: 4px;
     padding: 10px 10px;
     width: 40%;
@@ -78,7 +83,7 @@
 
 .addNewAnnouncementFields .inputFields textarea {
     font-size: 16px;
-    border: 2px solid rgb(54, 38, 59);
+    border: 2px solid rgb(54 38 59);
     border-radius: 4px;
     padding: 10px 10px;
     width: 40%;
@@ -93,7 +98,7 @@
 }
 
 .addNewAnnouncementFields .buttons input {
-    background-color: rgb(121, 190, 0);
+    background-color: rgb(121 190 0);
     border: none;
     border-radius: 8px;
     color: white;
@@ -116,12 +121,12 @@
     justify-content:center;
     min-height: 50px;
     padding: 10px 0;
-    border: 2px solid rgb(54, 38, 59);
+    border: 2px solid rgb(54 38 59);
 }
 
 .searchField input {
     font-size: 16px;
-    border: 2px solid rgb(54, 38, 59);
+    border: 2px solid rgb(54 38 59);
     border-radius: 4px;
     padding: 10px 10px;
     width: 15%;
@@ -133,32 +138,40 @@
 }
 
 /*Selected announcement*/
-.selectedAnnouncement {
-    padding: 50px 50px;
+.selectedAnnouncementWrapper {
+    background-color: rgb(209 255 212);
+    padding: 20px 30px;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 2px solid rgb(54 38 59);
 }
 
-.selectedAnnouncementInfo {
+.selectedAnnouncementWrapper .selectedAnnouncementInfo {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.selectedAnnouncementInfo .buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.selectedAnnouncementInfo .buttons:last-child {
-    justify-content: space-between;
-}
 
 /*Edit announcement fields*/
 
 .editAnnouncementFields {
     display: flex;
     flex-direction: column;
+}
+
+/*Announcement*/
+
+.announcement {
+    background-color: rgb(240 242 250);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
+    margin: 15px 0;
+    font-size: 30px;
+}
+
+.announcement .dateDisplay {
+    font-size: 15px;
 }

@@ -26,21 +26,20 @@ class SelectedAnnouncement extends Component {
 
 	render() {
 		return (
-			<div className="selectedAnnouncement">
+			<div className="selectedAnnouncementWrapper">
 				<div className="selectedAnnouncementInfo">
 					<div>
 						<div style={{display: this.state.displayAnnouncementInfo}}>
-							<p>Title: {this.props.announcement.title}</p>
-							<p>Description: {this.props.announcement.description}</p>
+							<p>{this.props.announcement.title}</p>
+							<p>{this.props.announcement.description}</p>
 						</div>
 						<EditAnnouncementFields editAnnouncement={this.props.editAnnouncement}
 						                        announcement={this.props.announcement}
 						                        toggleEditingFields={this.toggleEditingFields}
-						                        displayEditAnnouncementFields={this.state.displayEditAnnouncementFields}
-						/>
+						                        displayEditAnnouncementFields={this.state.displayEditAnnouncementFields}/>
 						<DateDisplay date={this.props.announcement.date} />
 					</div>
-					<div className="buttons">
+					<div>
 						<button onClick={this.props.closeDetails}>Close details</button>
 						<div style={{display: this.state.displayAnnouncementInfo}}>
 							<EditAnnouncementBtn toggleEditingFields={this.toggleEditingFields}/>
@@ -49,7 +48,10 @@ class SelectedAnnouncement extends Component {
 						</div>
 					</div>
 				</div>
-				<TopSimilarAnnouncements/>
+				<hr />
+				<TopSimilarAnnouncements announcements={this.props.announcements}
+				                         announcement={this.props.announcement}
+				                         selectAnnouncement={this.props.selectAnnouncement}/>
 			</div>
 		)
 	}

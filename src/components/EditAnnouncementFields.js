@@ -33,6 +33,7 @@ class EditAnnouncementFields extends Component {
 	onSubmit(e) {
 		e.preventDefault();
 		this.props.editAnnouncement(this.state);
+		this.props.toggleEditingFields();
 		this.setState({
 			title: this.props.announcement.title,
 			description: this.props.announcement.description
@@ -53,13 +54,14 @@ class EditAnnouncementFields extends Component {
 				<form className="editAnnouncementFields"
 				      onSubmit={this.onSubmit}
 				      onReset={this.onReset}>
+					<label>Title:</label>
 					<input name="title"
 					       type="text"
 					       required={true}
 					       value={this.state.title}
 					       onChange={this.onChange}/>
-					<input name="description"
-					       type="text"
+					<label>Description:</label>
+					<textarea name="description"
 					       required={true}
 					       value={this.state.description}
 					       onChange={this.onChange}/>

@@ -2,8 +2,9 @@ import DateDisplay from "./DateDisplay";
 
 function Announcement(props) {
 	return (
-		<div onClick={props.selectAnnouncement.bind(this, props.announcement.id)}>
-			{props.announcement.title}
+		<div className="announcement"
+		     onClick={props.selectAnnouncement.bind(this, props.announcement.id)}>
+			<p>{props.announcement.title}</p>
 			<DateDisplay date={props.announcement.date}/>
 		</div>
 	)

@@ -115,7 +115,6 @@ class App extends Component {
 
 	//Edit announcement
 	editAnnouncement(editedAnnouncement) {
-		console.log(editedAnnouncement);
 		this.setState({
 			announcement: this.state.announcements.map((announcement) => {
 				if (announcement.id === editedAnnouncement.id) {
