@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/announcementWebsiteForNerdySoft/static/css/main.2c3360a2.chunk.css",
+    "main.js": "/announcementWebsiteForNerdySoft/static/js/main.99b33a08.chunk.js",
+    "main.js.map": "/announcementWebsiteForNerdySoft/static/js/main.99b33a08.chunk.js.map",
+    "runtime-main.js": "/announcementWebsiteForNerdySoft/static/js/runtime-main.73edf1fc.js",
+    "runtime-main.js.map": "/announcementWebsiteForNerdySoft/static/js/runtime-main.73edf1fc.js.map",
+    "static/js/2.c65c4ae9.chunk.js": "/announcementWebsiteForNerdySoft/static/js/2.c65c4ae9.chunk.js",
+    "static/js/2.c65c4ae9.chunk.js.map": "/announcementWebsiteForNerdySoft/static/js/2.c65c4ae9.chunk.js.map",
+    "index.html": "/announcementWebsiteForNerdySoft/index.html",
+    "static/css/main.2c3360a2.chunk.css.map": "/announcementWebsiteForNerdySoft/static/css/main.2c3360a2.chunk.css.map",
+    "static/js/2.c65c4ae9.chunk.js.LICENSE.txt": "/announcementWebsiteForNerdySoft/static/js/2.c65c4ae9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.73edf1fc.js",
+    "static/js/2.c65c4ae9.chunk.js",
+    "static/css/main.2c3360a2.chunk.css",
+    "static/js/main.99b33a08.chunk.js"
+  ]
+}
